@@ -1,0 +1,185 @@
+package training.iqgateway.controller;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.stream.Collectors;
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+
+
+import training.iqgateway.model.DocumentsEO;
+import training.iqgateway.service.DocumentService;
+
+@RestController
+@RequestMapping("/documents")
+@CrossOrigin(origins = "http://localhost:5173")
+public class DocumentController {
+
+	@Autowired
+	private DocumentService docSer;
+	
+
+	@GetMapping("/claim/{claimId}")
+	public ResponseEntity<List<DocumentDTO>> getDocumentsByClaimId(@PathVariable Integer claimId) {
+	    List<DocumentsEO> documents = docSer.findByClaimId(claimId);
+	    if (documents.isEmpty()) return ResponseEntity.noContent().build();
+	    
+	    for (DocumentsEO doc : documents) {
+	    	System.out.println("DB _id: " + doc.get_id() + ", claim_id: " + doc.getClaimId());
+	    }
+
+
+	    List<DocumentDTO> dtos = documents.stream().map(doc -> {
+	        DocumentDTO dto = new DocumentDTO();
+	        dto.setId(doc.get_id());
+	        dto.setClaimId(doc.getClaimId());
+	        dto.setBloodTest(doc.getBloodTest());
+	        dto.setAdmissionNote(doc.getAdmissionNote());
+	        dto.setPrescription(doc.getPrescription());
+	        dto.setXrayReport(doc.getXrayReport());
+	        dto.setInsuranceForm(doc.getInsuranceForm());
+	        dto.setDischargeSummary(doc.getDischargeSummary());
+	        dto.setOther(doc.getOther());
+	        dto.setLastUpdated(doc.getLastUpdated());
+	        dto.setVerifiedBy(doc.getVerifiedBy());
+ 
+	        return dto;
+	    }).collect(Collectors.toList());
+ 
+	    return ResponseEntity.ok(dtos);
+	}
+	
+	@PutMapping("/{id}")
+	public ResponseEntity<?> updatePartialDocument(
+	    @PathVariable Integer id,
+	    @RequestBody Map<String, Object> updates
+	) {
+	    Optional<DocumentsEO> docOpt = docSer.findById(id);
+
+	    if (docOpt.isEmpty()) {
+	        return ResponseEntity.status(404).body("Document not found");
+	    }
+
+	    DocumentsEO doc = docOpt.get();
+
+	    Object otherField = updates.get("other");
+	    if (otherField != null && otherField instanceof Map) {
+	        Map<String, String> otherMap = new HashMap<>();
+	        ((Map<?, ?>) otherField).forEach((k, v) -> {
+	            if (k != null && v != null) {
+	                otherMap.put(k.toString(), v.toString());
+	            }
+	        });
+	        doc.setOther(otherMap);
+	    }
+
+	    Object lastUpdated = updates.get("last_updated");
+	    if (lastUpdated instanceof String) {
+	    	doc.setLastUpdated((String) lastUpdated);
+	    }
+
+	    DocumentsEO saved = docSer.save(doc);
+
+	    return ResponseEntity.ok(saved);
+	}
+
+	@GetMapping
+	public ResponseEntity<List<DocumentsEO>> getAllDocs(){
+		List<DocumentsEO> docs=docSer.findAll();
+		if(docs.isEmpty()) {
+			return ResponseEntity.noContent().build();
+		}
+		return ResponseEntity.ok(docs);
+	}
+	
+	@GetMapping("/{_id}")
+	public ResponseEntity<DocumentsEO> getById(@PathVariable Integer _id)
+	{
+		return docSer.findById(_id)
+				     .map(ResponseEntity::ok)
+				     .orElse(ResponseEntity.notFound().build());
+	}
+	
+	@PostMapping("/upload")
+	public ResponseEntity<DocumentsEO> createDocument(@RequestBody DocumentsEO docs){
+		if(docs.get_id()==null) {
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+		}
+		if(docSer.findById(docs.get_id()).isPresent()) {
+			return ResponseEntity.status(HttpStatus.CONFLICT).build();
+		}
+		
+		DocumentsEO saved=docSer.save(docs);
+		return ResponseEntity.status(HttpStatus.CREATED).body(saved);
+	}
+	
+	@PatchMapping("/{id}")
+	public ResponseEntity<?> patchDocument(
+	        @PathVariable Integer id,
+	        @RequestBody Map<String, Object> updates) {
+
+	    Optional<DocumentsEO> docOpt = docSer.findById(id);
+
+	    if (docOpt.isEmpty()) {
+	        return ResponseEntity.status(404).body("Document not found with id: " + id);
+	    }
+
+	    DocumentsEO doc = docOpt.get();
+
+	    if (updates.containsKey("other")) {
+	        Object otherData = updates.get("other");
+
+	        if (otherData instanceof Map) {
+	            @SuppressWarnings("unchecked")
+	            Map<String, String> otherMap = (Map<String, String>) otherData;
+	            doc.setOther(otherMap); // Mongo will store this as a native JSON object
+	        } else {
+	            return ResponseEntity.badRequest().body("'other' must be a JSON object");
+	        }
+	    }
+
+	    if (updates.containsKey("last_updated")) {
+	        Object updatedDate = updates.get("last_updated");
+	        if (updatedDate instanceof String) {
+	        	doc.setLastUpdated((String) updatedDate);
+	        }
+	    }
+
+	    DocumentsEO updated = docSer.save(doc);
+
+	    return ResponseEntity.ok(updated);
+	}
+
+	@PutMapping("/upload/{_id}")
+	public ResponseEntity<DocumentsEO> updateDocument(@PathVariable Integer _id, @RequestBody DocumentsEO doc) {
+	    return docSer.update(_id, doc)
+	        .map(ResponseEntity::ok)
+	        .orElse(ResponseEntity.notFound().build());
+	}
+	
+    @DeleteMapping("delete/{_id}")
+    public ResponseEntity<Void> deleteDocument(@PathVariable Integer _id) {
+        if (docSer.findById(_id).isEmpty()) {
+            return ResponseEntity.notFound().build();
+        }
+        docSer.DeleteById(_id);
+        return ResponseEntity.noContent().build();
+    }
+    	
+}

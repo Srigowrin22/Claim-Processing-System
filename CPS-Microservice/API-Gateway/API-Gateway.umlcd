@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.yattasolutions.uml.diagrams.classifier:ClassDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.yattasolutions.uml.diagrams.classifier="http://ns.yatta-solutions.com/umllab/diagrams/classifier/1.1.0" xmi:id="_v1lDAHkuEfCX85u6z3nWxQ">
+  <modelElement href="API-Gateway.uml#_wNudRHkuEfCX85u6z3nWxQ"/>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_wjhuIHkuEfCX85u6z3nWxQ" name="ZuulApiGatewayApplicationTests">
+    <modelElement href="API-Gateway.uml#_wOKiJHkuEfCX85u6z3nWxQ"/>
+    <visualProperties xmi:id="_wjhuIXkuEfCX85u6z3nWxQ" position="272.0,30.0" size="-1.0,-1.0"/>
+    <stereotypes xmi:id="_wjhuInkuEfCX85u6z3nWxQ" name="LegacyStyledElement">
+      <modelElement href="API-Gateway.uml#_wONlcHkuEfCX85u6z3nWxQ"/>
+    </stereotypes>
+    <stereotypes xmi:id="_wjhuI3kuEfCX85u6z3nWxQ" name="Annotations">
+      <modelElement href="API-Gateway.uml#_wOQowHkuEfCX85u6z3nWxQ"/>
+    </stereotypes>
+    <visibility xmi:id="_wjhuJHkuEfCX85u6z3nWxQ" label="~"/>
+    <operations xmi:id="_wjhuJXkuEfCX85u6z3nWxQ" name="contextLoads">
+      <modelElement href="API-Gateway.uml#_wONlcXkuEfCX85u6z3nWxQ"/>
+      <stereotypes xmi:id="_wjhuJnkuEfCX85u6z3nWxQ" name="Annotations">
+        <modelElement href="API-Gateway.uml#_wOPaoHkuEfCX85u6z3nWxQ"/>
+      </stereotypes>
+      <visibility xmi:id="_wjhuJ3kuEfCX85u6z3nWxQ" label="~"/>
+      <cardinality xmi:id="_wjhuKHkuEfCX85u6z3nWxQ" label="1" max="1" min="1"/>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_wjbAcHkuEfCX85u6z3nWxQ" name="ZuulApiGatewayApplication">
+    <modelElement href="API-Gateway.uml#_wOAxInkuEfCX85u6z3nWxQ"/>
+    <visualProperties xmi:id="_wjbAcXkuEfCX85u6z3nWxQ" position="64.0,30.0" size="-1.0,-1.0"/>
+    <stereotypes xmi:id="_wjbAcnkuEfCX85u6z3nWxQ" name="LegacyStyledElement">
+      <modelElement href="API-Gateway.uml#_wOD0cHkuEfCX85u6z3nWxQ"/>
+    </stereotypes>
+    <stereotypes xmi:id="_wjbAc3kuEfCX85u6z3nWxQ" name="Annotations">
+      <modelElement href="API-Gateway.uml#_wOJUAHkuEfCX85u6z3nWxQ"/>
+    </stereotypes>
+    <visibility xmi:id="_wjbAdHkuEfCX85u6z3nWxQ" label="+"/>
+    <operations xmi:id="_wjbAdXkuEfCX85u6z3nWxQ" name="main" staticOperation="true">
+      <modelElement href="API-Gateway.uml#_wOFppHkuEfCX85u6z3nWxQ"/>
+      <stereotypes xmi:id="_wjbAdnkuEfCX85u6z3nWxQ" name="StyledElement">
+        <modelElement href="API-Gateway.uml#_wOHe1HkuEfCX85u6z3nWxQ"/>
+      </stereotypes>
+      <visibility xmi:id="_wjbAd3kuEfCX85u6z3nWxQ" label="+"/>
+      <cardinality xmi:id="_wjbAeHkuEfCX85u6z3nWxQ" label="1" max="1" min="1"/>
+      <parameters xmi:id="_wjbAeXkuEfCX85u6z3nWxQ" name="args">
+        <modelElement href="API-Gateway.uml#_wOGQsnkuEfCX85u6z3nWxQ"/>
+        <cardinality xmi:id="_wjbAenkuEfCX85u6z3nWxQ" label="1..*" max="-1" min="1"/>
+        <type xmi:id="_wjbAe3kuEfCX85u6z3nWxQ" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+</com.yattasolutions.uml.diagrams.classifier:ClassDiagram>

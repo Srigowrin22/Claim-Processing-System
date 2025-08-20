@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:UMLLabProfile="http:///schemas/UMLLabProfile/NS/0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/UMLLabProfile/NS/0 pathmap://UMLLAB_PROFILES/UMLLab.profile.uml#UMLLabProfile-Annotation_2-UMLLabProfile">
+  <uml:Model xmi:id="_vzW1cHkuEfCX85u6z3nWxQ" name="API_Gateway">
+    <eAnnotations xmi:id="_v9khYHkuEfCX85u6z3nWxQ" source="http://ns.yatta.de/umllab">
+      <contents xmi:type="ecore:EAnnotation" xmi:id="_v9lIcHkuEfCX85u6z3nWxQ" source="codegen">
+        <details xmi:id="_v9lvgHkuEfCX85u6z3nWxQ" key="codegenDirectory" value="/API-Gateway/src/main/java"/>
+        <details xmi:id="_wjAwwHkuEfCX85u6z3nWxQ" key="AssociatedSourceCode" value="/API-Gateway/src/main/java/traning/iqgateway/ZuulApiGatewayApplication.java;3304654746/1;/API-Gateway/src/test/java/traning/iqgateway/ZuulApiGatewayApplicationTests.java;282863162/1;"/>
+      </contents>
+    </eAnnotations>
+    <elementImport xmi:id="_wOEbgHkuEfCX85u6z3nWxQ">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+    </elementImport>
+    <elementImport xmi:id="_wOEbgXkuEfCX85u6z3nWxQ">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#byte"/>
+    </elementImport>
+    <elementImport xmi:id="_wOFCkHkuEfCX85u6z3nWxQ">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#char"/>
+    </elementImport>
+    <elementImport xmi:id="_wOFCknkuEfCX85u6z3nWxQ">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+    </elementImport>
+    <elementImport xmi:id="_wOFCk3kuEfCX85u6z3nWxQ">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#float"/>
+    </elementImport>
+    <elementImport xmi:id="_wOFClHkuEfCX85u6z3nWxQ">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+    </elementImport>
+    <elementImport xmi:id="_wOFClXkuEfCX85u6z3nWxQ">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+    </elementImport>
+    <elementImport xmi:id="_wOFClnkuEfCX85u6z3nWxQ">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#short"/>
+    </elementImport>
+    <elementImport xmi:id="_wOFCmHkuEfCX85u6z3nWxQ">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </elementImport>
+    <packagedElement xmi:type="uml:Package" xmi:id="_wNoWonkuEfCX85u6z3nWxQ" name="traning">
+      <packagedElement xmi:type="uml:Package" xmi:id="_wNudRHkuEfCX85u6z3nWxQ" name="iqgateway">
+        <packagedElement xmi:type="uml:Class" xmi:id="_wOAxInkuEfCX85u6z3nWxQ" name="ZuulApiGatewayApplication">
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_wgjSoHkuEfCX85u6z3nWxQ" name="main" specification="_wOFppHkuEfCX85u6z3nWxQ">
+            <ownedParameter xmi:id="_wgjSoXkuEfCX85u6z3nWxQ" name="args">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_wgjSonkuEfCX85u6z3nWxQ" value="*"/>
+            </ownedParameter>
+            <language>java</language>
+            <body>SpringApplication.run(ZuulApiGatewayApplication.class, args);
+	</body>
+          </ownedBehavior>
+          <ownedOperation xmi:id="_wOFppHkuEfCX85u6z3nWxQ" name="main" isStatic="true" method="_wgjSoHkuEfCX85u6z3nWxQ">
+            <ownedParameter xmi:id="_wOGQsnkuEfCX85u6z3nWxQ" name="args">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_wOHe2XkuEfCX85u6z3nWxQ" value="*"/>
+            </ownedParameter>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_wOKiJHkuEfCX85u6z3nWxQ" name="ZuulApiGatewayApplicationTests" visibility="package">
+          <eAnnotations xmi:id="_wOMXUHkuEfCX85u6z3nWxQ" source="http://ns.yatta.de/umllab">
+            <contents xmi:type="ecore:EAnnotation" xmi:id="_wOMXU3kuEfCX85u6z3nWxQ" source="codegen">
+              <details xmi:id="_wOMXVnkuEfCX85u6z3nWxQ" key="codegenDirectory" value="/API-Gateway/src/test/java"/>
+            </contents>
+          </eAnnotations>
+          <ownedOperation xmi:id="_wONlcXkuEfCX85u6z3nWxQ" name="contextLoads" visibility="package"/>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_wNpkwXkuEfCX85u6z3nWxQ" name="org">
+      <packagedElement xmi:type="uml:Package" xmi:id="_wNqy4HkuEfCX85u6z3nWxQ" name="springframework">
+        <packagedElement xmi:type="uml:Package" xmi:id="_wNqy5HkuEfCX85u6z3nWxQ" name="boot">
+          <packagedElement xmi:type="uml:Package" xmi:id="_wNrZ8HkuEfCX85u6z3nWxQ" name="autoconfigure">
+            <packagedElement xmi:type="uml:Interface" xmi:id="_wgdMAHkuEfCX85u6z3nWxQ" name="SpringBootApplication"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Package" xmi:id="_wNz81nkuEfCX85u6z3nWxQ" name="test">
+            <packagedElement xmi:type="uml:Package" xmi:id="_wNz813kuEfCX85u6z3nWxQ" name="context">
+              <packagedElement xmi:type="uml:Interface" xmi:id="_wgg2YHkuEfCX85u6z3nWxQ" name="SpringBootTest"/>
+            </packagedElement>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_wgbW0HkuEfCX85u6z3nWxQ" name="SpringApplication"/>
+        </packagedElement>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_wNzVwHkuEfCX85u6z3nWxQ" name="junit">
+        <packagedElement xmi:type="uml:Package" xmi:id="_wNzVw3kuEfCX85u6z3nWxQ" name="jupiter">
+          <packagedElement xmi:type="uml:Package" xmi:id="_wNzVxHkuEfCX85u6z3nWxQ" name="api">
+            <packagedElement xmi:type="uml:Interface" xmi:id="_wgfBMHkuEfCX85u6z3nWxQ" name="Test"/>
+          </packagedElement>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <profileApplication xmi:id="_v9m9oHkuEfCX85u6z3nWxQ">
+      <eAnnotations xmi:id="_v9oy0HkuEfCX85u6z3nWxQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://UMLLAB_PROFILES/UMLLab.profile.uml#UMLLabProfile-Annotation_2-UMLLabProfile"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://UMLLAB_PROFILES/UMLLab.profile.uml#UMLLabProfile"/>
+    </profileApplication>
+  </uml:Model>
+  <UMLLabProfile:TargetLanguage xmi:id="_v9oy0XkuEfCX85u6z3nWxQ" base_Package="_vzW1cHkuEfCX85u6z3nWxQ">
+    <languageName>java</languageName>
+  </UMLLabProfile:TargetLanguage>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_wOD0cHkuEfCX85u6z3nWxQ" base_Element="_wOAxInkuEfCX85u6z3nWxQ"/>
+  <UMLLabProfile:StyledElement xmi:id="_wOHe1HkuEfCX85u6z3nWxQ" base_Element="_wOFppHkuEfCX85u6z3nWxQ"/>
+  <UMLLabProfile:Annotations xmi:id="_wOJUAHkuEfCX85u6z3nWxQ" base_Element="_wOAxInkuEfCX85u6z3nWxQ">
+    <annotations xmi:id="_wOJUAnkuEfCX85u6z3nWxQ" name="SpringBootApplication"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_wONlcHkuEfCX85u6z3nWxQ" base_Element="_wOKiJHkuEfCX85u6z3nWxQ"/>
+  <UMLLabProfile:Annotations xmi:id="_wOPaoHkuEfCX85u6z3nWxQ" base_Element="_wONlcXkuEfCX85u6z3nWxQ">
+    <annotations xmi:id="_wOPao3kuEfCX85u6z3nWxQ" name="Test"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:Annotations xmi:id="_wOQowHkuEfCX85u6z3nWxQ" base_Element="_wOKiJHkuEfCX85u6z3nWxQ">
+    <annotations xmi:id="_wOQoxnkuEfCX85u6z3nWxQ" name="SpringBootTest"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:Reference xmi:id="_wgb94HkuEfCX85u6z3nWxQ" base_Element="_wgbW0HkuEfCX85u6z3nWxQ"/>
+  <UMLLabProfile:Reference xmi:id="_wgeaIHkuEfCX85u6z3nWxQ" base_Element="_wgdMAHkuEfCX85u6z3nWxQ"/>
+  <UMLLabProfile:Reference xmi:id="_wggPUHkuEfCX85u6z3nWxQ" base_Element="_wgfBMHkuEfCX85u6z3nWxQ"/>
+  <UMLLabProfile:Reference xmi:id="_wgiEgHkuEfCX85u6z3nWxQ" base_Element="_wgg2YHkuEfCX85u6z3nWxQ"/>
+</xmi:XMI>

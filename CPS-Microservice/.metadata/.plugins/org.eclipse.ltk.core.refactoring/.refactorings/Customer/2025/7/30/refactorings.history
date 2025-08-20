@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;MongoConfig.java&apos; to &apos;RegionalHead/src/main/java/traning.iqgateway.config&apos;&#x0D;&#x0A;- Original project: &apos;Customer&apos;&#x0D;&#x0A;- Destination element: &apos;RegionalHead/src/main/java/traning.iqgateway.config&apos;&#x0D;&#x0A;- Original element: &apos;traning.iqgateway.config.MongoConfig.java&apos;" description="Copy compilation unit" destination="=RegionalHead/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;traning.iqgateway.config" element1="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;traning.iqgateway.config{MongoConfig.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1753074790698" units="1" version="1.0"/>
+</session>
